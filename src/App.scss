@@ -1,0 +1,12 @@
+$width: 5em;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+.center {
+    padding-left: calc(50% - $width);
+    padding-right: calc(50% - $width);
+}

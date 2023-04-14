@@ -1,12 +1,14 @@
-$width: 5em;
+$width: 1300px;
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: sans-serif;
   }
-  
-.center {
-    padding-left: calc(50% - $width);
-    padding-right: calc(50% - $width);
+
+.container {
+    max-width: 1300px;
+    width: 100%;
+    margin: 0 auto;
 }

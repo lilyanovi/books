@@ -11,9 +11,18 @@ export const catalogReducer = (state = initialState, action) => {
             return {
                 ...state,
                 ...payload
-
             }
-            default:
-                return state
+
+        case types.DElETE_CARD:
+            const cards = { ...state}
+            Object.keys(cards).forEach((key)=>{
+             if(cards[key].id === payload) {
+                delete cards[key]
+               }          
+            })
+            return cards
+
+        default:
+            return state
     }
 }

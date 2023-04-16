@@ -1,0 +1,109 @@
+.card-item {
+    background: #FFFFFF;
+    box-shadow: 0px 0px 30px rgba(68, 68, 68, 0.05);
+    border-radius: 20px;
+    padding: 30px;
+    width: 100%;
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    
+    &__img {
+
+        align-self: center;
+        & img {
+            width: 200px;
+            max-height: 300px;
+        }
+    }
+
+    &__btn {
+        display: flex;
+        justify-content: space-between;
+
+        &__like {
+           background-color: transparent;
+           border: none;
+
+           & svg {
+            fill:#BDBDBD;
+            width: 30px;
+            height: 30px;
+           }
+
+           &:hover {
+            & svg {
+                fill:  #976464;
+                cursor: pointer;
+            }
+           }
+
+           &:active {
+            & svg {
+                fill:  #976464;
+            }
+           }
+        }
+
+        &__del {
+            cursor: pointer; 
+            background-color: transparent;
+            border: none;
+            position: relative;
+
+           &:before, &:after {
+            content: ""; 
+            position: absolute;
+            top: 15px;
+            right: 0px; 
+            width: 30px; 
+            height: 4px; 
+            background: #BDBDBD;
+            }
+
+            &:before {transform: rotate(45deg);}
+            &:after {transform: rotate(-45deg);}
+            
+            &:hover {
+                &:before, &:after {
+                    background: #976464;
+                }
+            }
+
+            &:active {
+                &:before, &:after {
+                    background: #BDBDBD;
+                }
+            }
+        }
+
+    }
+
+    &__read {
+        background: #FFFFFF;
+        box-shadow: 0px 0px 30px rgba(68, 68, 68, 0.05);
+        padding: 16px;
+        text-align: center;
+        border: 1px solid #BDBDBD;
+        border-radius: 46px;
+        
+
+        & a {
+            text-decoration: none;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 17px;
+            color: #976464;
+        }
+
+        &:hover {
+            background: linear-gradient(102.48deg, #976464 -29.03%, #CFA5A5 97.75%);
+
+            & a {
+                color: #FFFFFF;
+            }
+        }
+    }
+}

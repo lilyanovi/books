@@ -6,3 +6,10 @@ export const setCards = (data) => {
         payload: data   
     }
 }
+
+export const deleteCard = (id) => {
+    return {
+        type: types.DElETE_CARD,
+        payload: id   
+    }
+}

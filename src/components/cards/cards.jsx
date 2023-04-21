@@ -1,14 +1,19 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { setCards } from '../../store/catalog/action'
 import { selectCards } from '../../store/catalog/selector'
 import './cards.scss'
 import { useDispatch, useSelector } from 'react-redux'
 import CardItem from './cardItem'
+import { selectFilter } from '../../store/filter/selector'
+import { selectShowLikes } from '../../store/showFilter/selector'
+import { selectLikes } from '../../store/likes/selector'
 
 const Cards = () => {
-
-const url = 'https://gutendex.com/books?sort=popular '
+const url = 'https://gutendex.com/books?sort=popular'
 const dispatch = useDispatch()
+const showLikes = useSelector(selectShowLikes)
+const dataCards = useSelector(selectCards)
+const dataCardsLikes = useSelector(selectLikes)
 
 useEffect(() => {
   fetch(url)
@@ -18,8 +23,7 @@ useEffect(() => {
       } else {
           data.json()
             .then((data) => {
-              dispatch(setCards(data.results))  
-              return
+              dispatch(setCards(data.results))
             })
             .catch((error) => console.log(error))
       }
@@ -27,20 +31,17 @@ useEffect(() => {
     .catch((error) => console.log(error))  
 }, [])
  
-  const dataCards = useSelector(selectCards)
-  //const copy = Object.assign(dataCards)
- // const cards = Object.entries(copy)
- // console.log(cards)
- //<div key={key}>{dataCards[key].id}</div>
     return (
       <>
         <main className='catalog'>
           <div className='container catalog__cards'>
-            {dataCards ?
-            Object.keys(dataCards).map(key =>       
-            <CardItem key={dataCards[key].id} card={dataCards[key]}/>
-            ):
-            <div>Данные не загружены</div>}
+            {Object.keys(dataCards).length !== 0 ?
+            Object.entries(showLikes ? dataCardsLikes : dataCards).map(card =>       
+            <CardItem 
+              key={card[1].id} 
+              card={ card[1]} 
+              keyCard={card[0]}/>):            
+            <div>Data not loaded</div>}
           </div>
         </main>
       </>

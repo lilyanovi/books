@@ -8,4 +8,15 @@
     line-height: 24px;
     text-transform: uppercase;
     color: #FFFFFF;
+
+    &__wrp {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__btns {
+        display: flex;
+        gap: 10px;
+    }
 }

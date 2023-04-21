@@ -1,0 +1,3 @@
+export const FILTER_SEARCH = 'FILTER_SEARCH'
+
+export const FILTER_GANRE = 'FILTER_GANRE'

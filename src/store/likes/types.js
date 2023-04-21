@@ -1,0 +1,3 @@
+export const CHANGE_LIKE = 'CHANGE_LIKE'
+
+export const DElETE_LIKES_CARD = 'DElETE_LIKES_CARD'

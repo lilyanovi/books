@@ -4,6 +4,7 @@ const initialState = {}
 
 export const catalogReducer = (state = initialState, action) => {
     const { type, payload } = action
+    const cards = { ...state}
 
     switch(type) {
        
@@ -13,13 +14,19 @@ export const catalogReducer = (state = initialState, action) => {
                 ...payload
             }
 
-        case types.DElETE_CARD:
-            const cards = { ...state}
-            Object.keys(cards).forEach((key)=>{
-             if(cards[key].id === payload) {
-                delete cards[key]
-               }          
-            })
+        case types.DElETE_CARD:      
+            const cardsDel = Object.values(cards).filter((card) => card.id !== payload)
+            const cardsNew = Object.assign(cardsDel)
+            return cardsNew
+        
+        case types.LIKE_CARD:     
+            const cardLike = Object.entries(cards).find((card)=> card[1].id === payload)
+            const likeInd = cardLike[0]
+            if(cards[likeInd].like === true){
+                cards[likeInd].like = false
+            } else {
+                cards[likeInd].like = true
+            }   
             return cards
 
         default:

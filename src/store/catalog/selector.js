@@ -1,1 +1,2 @@
-export const selectCards = (state) => state
+export const selectCards = (state) => state.catalog
+

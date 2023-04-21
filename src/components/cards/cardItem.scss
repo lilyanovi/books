@@ -22,7 +22,7 @@
         display: flex;
         justify-content: space-between;
 
-        &__like {
+        &__like-none {
            background-color: transparent;
            border: none;
 
@@ -45,6 +45,30 @@
             }
            }
         }
+
+        &__like {
+            background-color: transparent;
+            border: none;
+ 
+            & svg {
+             fill:#976464;
+             width: 30px;
+             height: 30px;
+            }
+ 
+            &:hover {
+             & svg {
+                 fill:  #BDBDBD;
+                 cursor: pointer;
+             }
+            }
+ 
+            &:active {
+             & svg {
+                 fill:  #BDBDBD;
+             }
+            }
+         }
 
         &__del {
             cursor: pointer; 
@@ -87,6 +111,7 @@
         text-align: center;
         border: 1px solid #BDBDBD;
         border-radius: 46px;
+        cursor: pointer;
         
 
         & a {

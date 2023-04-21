@@ -13,3 +13,10 @@ export const deleteCard = (id) => {
         payload: id   
     }
 }
+
+export const likeCard = (key) => {
+    return {
+        type: types.LIKE_CARD,
+        payload: key
+    }
+}

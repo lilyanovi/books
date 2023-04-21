@@ -1,0 +1,24 @@
+.btn-likes {
+    background-color: transparent;
+    border: none;
+    display: flex;
+
+    & svg {
+     fill:#FFFFFF;
+     width: 30px;
+     height: 30px;
+    }
+
+    &:hover {
+     & svg {
+         fill:  #976464;
+         cursor: pointer;
+     }
+    }
+
+    &:active {
+     & svg {
+         fill:  #FFFFFF;
+     }
+    }
+}

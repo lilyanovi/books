@@ -16,7 +16,7 @@ const handleDeleteCard = (idCard) => {
 }
 
 const handleLikeCard = (idCard) => { 
-    dispatch(likeCard(idCard))//}    
+    dispatch(likeCard(idCard))   
     dispatch(changeLike(card))
 }
 
@@ -46,7 +46,7 @@ const handleLikeCard = (idCard) => {
             {Object.keys(card.authors).map((key, i)=> 
             <p key={i}>{card.authors[key].name}</p>
             )}
-            <h3>{card.title}</h3>
+            <h2>{card.title}</h2>
             <button className='card-item__read'>
                 <a 
                     href={card.formats['text/html']}

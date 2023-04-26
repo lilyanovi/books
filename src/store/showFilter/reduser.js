@@ -1,11 +1,12 @@
 import * as types from '../showFilter/types'
 
 const initialState = {
-    showLikes: false
+    showLikes: false,
+    showSearch: false
 }
 
 export const showFilterReducer = (state = initialState, action) => {
-    const { type } = action
+    const { type, payload } = action
    
 
     switch(type) {
@@ -19,6 +20,9 @@ export const showFilterReducer = (state = initialState, action) => {
             }
             return state
 
+        case types.SHOW_SEARCH:
+            state.showSearch = payload 
+            return state
 
 
         default:

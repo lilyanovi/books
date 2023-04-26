@@ -1,11 +1,41 @@
 .catalog {
     background-color: #E8E8E8;
     padding: 30px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
 
-    &__cards{
-        display: flex;
+    &__cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
         flex-wrap: wrap;
         gap: 20px;
-        justify-content: space-between;
+  
+    }
+
+    &__btn {
+        background: linear-gradient(102.48deg, #976464 -29.03%, #CFA5A5 97.75%);
+        border-radius: 49px;
+        padding: 13px 45px;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 24px;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        border: 1px solid transparent;
+        cursor: pointer;
+
+        &:hover{
+            border: 1px solid #976464;
+            color: #976464;
+            background: #FFFFFF;
+        }
+
+        &:active {
+            border: 1px solid #FFFFFF;
+            color: #FFFFFF;
+            background: linear-gradient(102.48deg, #976464 -29.03%, #CFA5A5 97.75%);
+        }
     }
 }

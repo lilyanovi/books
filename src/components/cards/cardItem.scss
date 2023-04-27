@@ -5,18 +5,20 @@
     padding: 30px;
     width: 100%;
     max-width: 420px;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-auto-rows: auto 300px auto auto 50px;
     gap: 10px;
     
     &__img {
 
-        align-self: center;
+        justify-self: center;
         & img {
             width: 200px;
             max-height: 300px;
         }
     }
+    
+    
 
     &__btn {
         display: flex;

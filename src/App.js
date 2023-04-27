@@ -4,10 +4,10 @@ import Header from './components/header/header';
 
 function App() {
   return (
-    <>
+    <div className='app'>
       <Header />
       <Cards />
-    </>
+    </div>
   );
 }
 

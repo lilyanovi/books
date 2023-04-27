@@ -9,10 +9,9 @@ export const catalogReducer = (state = initialState, action) => {
     switch(type) {
        
         case types.SET_CARDS:
-            return {
-                ...state,
-                ...payload
-            }
+            const newSet = Object.assign({}, 
+                [...Object.values(cards), ...Object.values({...payload})])
+            return newSet
 
         case types.DElETE_CARD:      
             const cardsDel = Object.values(cards).filter((card) => card.id !== payload)

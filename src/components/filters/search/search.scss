@@ -17,7 +17,7 @@
     max-width: 200px;
 
         &::placeholder {
-            padding: 5px 10px;
+            padding: 0 10px;
             display: flex;
             align-items: center;
             color: #976464;
@@ -30,11 +30,17 @@
 
     &__btn {
         stroke:#FFFFFF;
+        fill: #FFFFFF;
         background-color: transparent;
         border: none;
         position: absolute;
         top: 7px;
         right: 12px;
-        cursor: pointer;
+
+        &__clear {
+            top: 0px;
+            right: 0px;
+            cursor: pointer;
+        }
     }
 }

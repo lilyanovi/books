@@ -12,3 +12,9 @@ $width: 1300px;
     width: 100%;
     margin: 0 auto;
 }
+
+.app {
+  display: grid;
+  height: 100vh;
+  grid-auto-rows: auto 1fr auto;
+}
